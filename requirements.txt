@@ -1,0 +1,33 @@
+===============> Nested Todo <=================
+
+ --------- (My thought process on how to accomplish this.) -----------
+1. When an existing todo is double clicked with setEventListenter(‘dblclick’) 
+2. Then it will createElement(‘div’) with createElement(‘ul’) with createElement(‘li’) with createElement(‘input’) below the existing todo that was double clicked.
+3. For above use appendChild() 
+4. When a nested todo is enter it will create a nested array. So maybe create a new function nestedArray.?
+5. Then add nestedArray to the original array by todo id
+6. Set an id to new nestedArrays.
+7. Then display it, maybe create a new function for this?
+
+------------- Requirements: -------------
+                  
+========> DONE:
+[DONE]: Find a way to display nested arrays below current todo.
+        (e.g >>> maybe an if statement to check if a certain li is double clicked, if yes then display the nested todo below it)
+
+[DONE]: It should have element div under current todo that was double clicked.
+[DONE]: It should have element ul inside div.
+[DONE]: It should have element li inside ul.
+[DONE]: It should have element input inside li.
+[DONE]: It should have nested array displayed under todo that was double clicked. 
+[DONE]: It should have a Add button on each todos.
+[DONE]: It should add new nested todo when enter key is click.
+[DONE]: It should add new nested todo into the original array.
+[DONE]: It should have an unique id for new created todo that are nested.
+[DONE]: It should have a nested array property name inside original array.
+[DONE]: It should edit nested todo when double clicked.
+[DONE]: It should delete nested todo when delete button is clicked.
+[DONE]: It should display a checkmark next to todo that is clicked which indicate it is completed. 
+
+=======>  TODO:
+[TODO]: It should display a checkmark on all todos if all completed button is clicked.

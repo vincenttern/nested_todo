@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!--Import Google Icon Font-->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!--Import materialize.css-->
+   <link type="text/css" rel="stylesheet" href="styles/materialize.min.css"  media="screen,projection"/>
+
+   <!--Let browser know website is optimized for mobile-->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nested Todo</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/basic.css">
+
+</head>
+
+<body>
+
+    <div class="row">
+      <div class="col s12 m6 offset-m3 14 offset-14 z-depth card-panel teal">
+        <div class="card">
+          <div class="card-content">
+            <div>
+              <div class="row">      
+                <div class="col s11">
+                    <input id="addTodoTextInput" class="z-depth-5" placeholder="orangize something here..." type="text">
+                </div>
+                <div class="col s1">
+                    <a onclick="controllers.addTodo()" class="btn-floating waves-effect waves-light red"><i class="material-icons">add</i></a>
+                </div>  
+              </div>               
+            </div>
+                
+            <ul id="todo-list" class="collection"></ul>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- Scripts -->
+  <script id="todo-template" type="text/x-handlebars-template">
+    {{#this}}
+      <li data-id="{{id}}">
+        <div class="view">
+          <div class="row">
+            <div class="col s10">
+              <label class="subheader" style="font-size: 25px;">{{todoText}}</label>
+            </div>
+
+            <div class="col s2"">
+              <button id="addNestedTodo" class="btn-floating waves-effect waves-light red"><i class="material-icons">add_circle</i></button>
+              <button id="destroy" class="btn-floating waves-effect waves-light blue"><i class="material-icons">delete</i></button>
+            </div>
+
+          </div>
+
+        </div>
+        <input class="edit" value="{{todoText}}">
+
+        <div class="nestedTodo-div">
+          <ul>
+            {{#each nestedArray}}
+            <li data-id="{{id}}">
+              <div class="view-nested">
+                <div class="row">
+                  <div class="col s10">
+                      <label>{{todoText}}</label>
+                  </div>
+                  <div class="col s2">
+                      <button id="completeNestedTodo" class="btn-floating waves-effect waves-light red"><i class="material-icons">done</i></button>
+                      <button id="destroyNestedTodo" class="btn-floating waves-effect waves-light blue"><i class="material-icons">delete</i></button>
+                  </div>
+                </div>
+              </div>
+              <input type="text" id="addNestedTodoInput" placeholder="add todo..." value="{{todoText}}">
+            </li>
+            {{/each}}
+          </ul>
+        </div>
+
+      </li>
+    
+    {{/this}}
+  </script>
+
+  <script src="handlebars-v4.1.0.js"></script>
+  <script type="text/javascript" src="scripts/materialize.js"></script>
+  <script type="text/javascript" src="scripts/initMaterialize.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+
+</html>

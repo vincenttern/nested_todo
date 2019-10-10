@@ -1,0 +1,30 @@
+.edit {
+    display: none;
+}
+
+#todo-list li.editing .view {
+	display: none;
+}
+
+#todo-list li.editing .edit {
+    display: block;
+
+}
+
+#addNestedTodoInput {
+    display: none;
+}
+
+li.editing > #addNestedTodoInput {
+    display: block;
+}
+
+li.editing > .view-nested {
+    display: none;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+
